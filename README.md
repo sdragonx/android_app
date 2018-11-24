@@ -2,14 +2,14 @@
 android_app c++ framework ( public domain )
 
 # app entry
+~~~
 void android_main(android_app* app)
 {
-　　//APP_LOG("main : start");
+　　//APP_LOG("main : 程序启动");
 　　app->onEvent = on_app_event;
- 
-　　//main loop
-　　while (app->running){
-　　　　app->process_message();
+　　//循环等待事情以进行处理。
+　　while (app->running){//app处于运行状态
+　　　　app->process_message();//处理消息主函数
 　　　　if(!app->pause()){
 　　　　　　//draw_frame();
 　　　　}
@@ -17,10 +17,12 @@ void android_main(android_app* app)
 　　　　　　//APP_LOG("PAUSE");
 　　　　}
 　　}
-　　//APP_LOG("main : end");
+　　//APP_LOG("main : 程序结束");
 }
+~~~
 
 # APP_EVENT struct
+~~~
 struct APP_EVENT
 {
 	int id;
@@ -38,8 +40,10 @@ struct APP_EVENT
 		};
 	};
 };
+~~~
 
 # main event callback
+~~~
 void on_app_event(android_app* app, APP_EVENT& event)
 {
     switch(event.id)
@@ -80,4 +84,5 @@ void on_app_event(android_app* app, APP_EVENT& event)
         //APP_LOG("unknow msg:%d", cmd);
         break;
     }
-}　
+}
+~~~
