@@ -1,7 +1,7 @@
 # android_app
 android_app c++ framework ( public domain )
 
-# app entry
+## app entry
 ~~~
 void android_main(android_app* app)
 {
@@ -21,7 +21,7 @@ void android_main(android_app* app)
 }
 ~~~
 
-# APP_EVENT struct
+## APP_EVENT struct
 ~~~
 struct APP_EVENT
 {
@@ -42,7 +42,7 @@ struct APP_EVENT
 };
 ~~~
 
-# main event callback
+## main event callback
 ~~~
 void on_app_event(android_app* app, APP_EVENT& event)
 {
